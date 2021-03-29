@@ -2,7 +2,7 @@
   "name": "@hexlet/code",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "gendiff.js",
   "type": "module",
   "bin": {
     "gendiff": "bin/gendiff.js"
@@ -21,7 +21,8 @@
   },
   "homepage": "https://github.com/Svencap/frontend-project-lvl2#readme",
   "dependencies": {
-    "commander": "^7.2.0"
+    "commander": "^7.2.0",
+    "lodash": "^4.17.21"
   },
   "devDependencies": {
     "eslint": "^7.23.0",
