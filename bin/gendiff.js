@@ -31,7 +31,7 @@ program
     const pathToFile2 = path.resolve(__dirname, '..', filepath2);
     const readingFile1 = fs.readFileSync(pathToFile1);
     const readingFile2 = fs.readFileSync(pathToFile2);
-    diff(JSON.parse(readingFile1), JSON.parse(readingFile2));
+    getdiff(JSON.parse(readingFile1), JSON.parse(readingFile2));
   })
   .parse();
 

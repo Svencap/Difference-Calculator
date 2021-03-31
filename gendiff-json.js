@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 
-const diff = (file1, file2) => {
+const getdiff = (file1, file2) => {
   let diff = `{`;
   const keysFile1 = Object.keys(file1)
   const keysFile2 = Object.keys(file2)
@@ -20,4 +20,4 @@ const diff = (file1, file2) => {
   return;
 };
  
-export default diff;
+export default getdiff;
