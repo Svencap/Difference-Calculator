@@ -1,17 +1,4 @@
-var _ = require('lodash');
-
-const file1 = {
-  "host": "hexlet.io",
-  "timeout": 50,
-  "proxy": "123.234.53.22",
-  "follow": false
-};
-
-const file2 = {
-  "timeout": 20,
-  "verbose": true,
-  "host": "hexlet.io"
-};
+import _ from 'lodash';
 
 
 const diff = (file1, file2) => {
@@ -20,7 +7,6 @@ const diff = (file1, file2) => {
   const keysFile2 = Object.keys(file2)
   const keys = keysFile1.concat(keysFile2).sort();
   const result = _.keyBy(keys);
-  console.log(result)
   for (const [key] of Object.entries(result)) {
     if (_.has(file1, key) && _.has(file2, key)) {
       if (file1[key] === file2[key]) diff += `\n    ${key}: ${file1[key]}`;
@@ -30,7 +16,8 @@ const diff = (file1, file2) => {
     else if (!_.has(file1, key) && _.has(file2, key)) diff += `\n  + ${key}: ${file2[key]}`
   }
   diff += `\n}`;
-  return diff
+  console.log(diff);
+  return;
 };
  
-export { diff };
+export default diff;
