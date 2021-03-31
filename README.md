@@ -1,6 +1,6 @@
 # frontend-project-lvl2
 
-[![](https://github.com/Svencap/frontend-project-lvl2/actions.svg)](https://github.com/Svencap/frontend-project-lvl2/actions)
+[![CI](https://github.com/Svencap/frontend-project-lvl2/actions/workflows/main.yml.svg)](https://github.com/Svencap/frontend-project-lvl2/actions/workflows/main.yml)
 
 Сравнение плоских файлов (JSON)
 
