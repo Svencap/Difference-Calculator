@@ -3,4 +3,7 @@
 
 Сравнение плоских файлов (JSON)
 
-https://asciinema.org/a/ig3V0IyltUp8DsxQIAbKS37TB
+[![asciicast](https://asciinema.org/a/ig3V0IyltUp8DsxQIAbKS37TB.svg)](https://asciinema.org/a/ig3V0IyltUp8DsxQIAbKS37TB)
+
+
+
