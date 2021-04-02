@@ -3,4 +3,6 @@ install:
 lint:
 	npx eslint .
 test:
-	node --experimental-vm-modules node_modules/.bin/jest
+	npx -n '--experimental-vm-modules' jest
+test-coverage:
+	npx -n '--experimental-vm-modules' jest --coverage

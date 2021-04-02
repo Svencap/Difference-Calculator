@@ -1,17 +1,15 @@
-import { test, expect } from '@jest/globals';
-
 import getPath from '../src/getPath';
 
 import getData from '../src/getData';
 
 import getdiff from '../gendiffJson';
 
-test('gendiffJson', () => {
-  const pathBefore = getPath('file1.json');
-  const pathAfter = getPath('file2.json');
-  const dataBeforeFile = JSON.parse(getData(pathBefore));
-  const dataAfterFile = JSON.parse(getData(pathAfter));
+const pathBefore = getPath('file1.json');
+const pathAfter = getPath('file2.json');
+const dataBeforeFile = JSON.parse(getData(pathBefore));
+const dataAfterFile = JSON.parse(getData(pathAfter));
 
+test('gendiffJson', () => {
   const expectDiff = `{
   - follow: false
     host: hexlet.io
