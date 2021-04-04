@@ -8,3 +8,6 @@
 
 [![asciicast](https://asciinema.org/a/ig3V0IyltUp8DsxQIAbKS37TB.svg)](https://asciinema.org/a/ig3V0IyltUp8DsxQIAbKS37TB)
 
+Сравнение плоских файлов (yaml)
+
+[![asciicast](https://asciinema.org/a/B2vHppxk5AaawrJFlGwsYyz2D.svg)](https://asciinema.org/a/B2vHppxk5AaawrJFlGwsYyz2D)
