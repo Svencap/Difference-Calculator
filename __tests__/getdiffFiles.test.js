@@ -1,6 +1,7 @@
+/* eslint-disable import/extensions */
 import { test, expect } from '@jest/globals';
 
-import { getPath, parser } from '../src/getPath';
+import { getPath, parser } from '../src/getPath.js';
 
 // import getData from '../src/getData';
 
