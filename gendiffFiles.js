@@ -64,4 +64,4 @@ const formater = (tree) => {
   return iter(tree, 2);
 };
 
-export { diff, formater };
+export default { diff, formater };
