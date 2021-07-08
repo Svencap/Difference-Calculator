@@ -32,14 +32,11 @@ const formater = (tree) => {
   const space = ' ';
   const iter = (node, depth) => {
     const result = [];
-    if (depth === 2) {
-      result.push('{');
-    }
+    if (depth === 2) result.push('{');
     node.forEach((item) => {
       const { name, value, oldValue, newValue, status, children } = item;
-      if (status === 'unchanged') {
-        result.push(`${space.repeat(depth)}  ${name}: ${value}`);
-      } else if (status === 'added') {
+      if (status === 'unchanged') result.push(`${space.repeat(depth)}  ${name}: ${value}`);
+      else if (status === 'added') {
         if (children !== undefined) {
           result.push(`${space.repeat(depth)}+ ${name}: {\n${iter(children, depth + 4)}\n${space.repeat(depth)}  }`);
         } else result.push(`${space.repeat(depth)}+ ${name}: ${value}`);
@@ -55,9 +52,7 @@ const formater = (tree) => {
         result.push(` ${space.repeat(depth)} ${name}: {\n${iter(children, depth + 4)}\n${space.repeat(depth)}  }`);
       }
     });
-    if (depth === 2) {
-      result.push('}');
-    }
+    if (depth === 2) result.push('}');
     return result.join('\n');
   };
   return iter(tree, 2);
