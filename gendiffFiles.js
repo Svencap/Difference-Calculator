@@ -48,9 +48,7 @@ const formater = (tree) => {
         if (children !== undefined) {
           result.push(`${space.repeat(depth)}- ${name}: {\n${iter(children, depth + 4)}\n${space.repeat(depth)}  }\n${space.repeat(depth)}+ ${name}: ${newValue}`);
         } else result.push(`${space.repeat(depth)}- ${name}: ${oldValue}\n${space.repeat(depth)}+ ${name}: ${newValue}`);
-      } else if (children !== undefined) {
-        result.push(` ${space.repeat(depth)} ${name}: {\n${iter(children, depth + 4)}\n${space.repeat(depth)}  }`);
-      }
+      } else if (children !== undefined) result.push(` ${space.repeat(depth)} ${name}: {\n${iter(children, depth + 4)}\n${space.repeat(depth)}  }`);
     });
     if (depth === 2) result.push('}');
     return result.join('\n');
