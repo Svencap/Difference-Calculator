@@ -58,8 +58,4 @@ describe('nesting check', () => {
     tree = diff(parser(getPath('file3.json')), parser(getPath('file4.json')));
     expect(formater(tree)).toBe(expectDiff);
   });
-  test('yml', () => {
-    tree = diff(parser(getPath('file3.yml')), parser(getPath('file4.yml')));
-    expect(formater(tree)).toBe(expectDiff);
-  });
 });
