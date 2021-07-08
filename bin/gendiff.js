@@ -2,6 +2,7 @@
 /* eslint-disable import/extensions */
 
 import { Command } from 'commander';
+// import { formater } from '../gendiffFiles.js';
 
 import { parser } from '../src/getPath.js';
 
