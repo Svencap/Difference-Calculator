@@ -19,7 +19,7 @@ program
   .option('-f, --format [type]', 'output format')
   .action((filepath1, filepath2) => {
     const treeAst = diff(parser(filepath1), parser(filepath2));
-    // console.log(treeAst);
+    // console.log(treeAst[0]);
     // console.log(formater(treeAst));
     console.log(formater(treeAst));
   })
