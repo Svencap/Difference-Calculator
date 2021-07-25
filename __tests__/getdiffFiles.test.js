@@ -1,15 +1,17 @@
 import { test, expect, describe } from '@jest/globals';
-// import { description } from 'commander';
 
 import { getPath, parser } from '../src/getPath';
 
-// import getData from '../src/getData';
+// import { plain, constructorName } from './plain.js';
 
-import { diff, formater } from '../gendiffFiles';
-// import { parse } from 'commander';
+import stylish from '../formatters/stylish';
+
+import diff from '../gendiffFiles';
+import { constructorName, plain } from '../formatters/plain';
+
+let tree;
 
 describe('nesting check', () => {
-  let tree;
   const expectDiff = `{
     common: {
       + follow: false
@@ -56,6 +58,24 @@ describe('nesting check', () => {
 }`;
   test('json', () => {
     tree = diff(parser(getPath('file3.json')), parser(getPath('file4.json')));
-    expect(formater(tree)).toBe(expectDiff);
+    expect(stylish(tree)).toBe(expectDiff);
+  });
+});
+
+describe('plain json', () => {
+  const expectPlainFormat = `Property 'common.follow' was added with value: false
+Property 'common.setting2' was removed
+Property 'common.setting3' was updated. From true to null
+Property 'common.setting4' was added with value: 'blah blah'
+Property 'common.setting5' was added with value: [complex value]
+Property 'common.setting6.doge.wow' was updated. From '' to 'so much'
+Property 'common.setting6.ops' was added with value: 'vops'
+Property 'group1.baz' was updated. From 'bas' to 'bars'
+Property 'group1.nest' was updated. From [complex value] to 'str'
+Property 'group2' was removed
+Property 'group3' was added with value: [complex value]`;
+  test('plain', () => {
+    tree = diff(parser(getPath('file3.json')), parser(getPath('file4.json')));
+    expect(plain(tree, constructorName(tree))).toBe(expectPlainFormat);
   });
 });
