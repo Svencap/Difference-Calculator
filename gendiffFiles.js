@@ -22,7 +22,7 @@ const diff = (file1, file2) => {
     } else if (_.has(file1, key) && !_.has(file2, key)) {
       if (typeof file1[key] === 'object') {
         buildAst.push({ name: key, children: diff(file1[key], file1[key]), status: 'deleted' });
-      } else buildAst.push({ name: key, value: file1[key], status: 'deleted1' });
+      } else buildAst.push({ name: key, value: file1[key], status: 'deleted' });
     }
   });
   return buildAst;
