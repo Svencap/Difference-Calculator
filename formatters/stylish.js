@@ -1,4 +1,5 @@
 /* eslint object-curly-newline: ["error", "never"] */
+
 const stylish = (tree) => {
   const space = ' ';
   const iter = (node, depth) => {

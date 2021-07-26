@@ -12,8 +12,6 @@ const createdTree = (file1, file2) => {
         buildAst.push({ name: key, value: file1[key], status: 'unchanged' });
       } else if (typeof file1[key] === 'object') {
         buildAst.push({ name: key, children: createdTree(file1[key], file1[key]), newValue: file2[key], status: 'changed' });
-      } else if (typeof file2[key] === 'object') {
-        buildAst.push({ name: key, children: createdTree(file2[key], file2[key]), newValue: file1[key], status: 'changed' });
       } else buildAst.push({ name: key, oldValue: file1[key], newValue: file2[key], status: 'changed' });
     } else if (!_.has(file1, key) && _.has(file2, key)) {
       if (typeof file2[key] === 'object') {
