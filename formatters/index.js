@@ -3,10 +3,16 @@ import { plain, constructorName } from './plain.js';
 
 import stylish from './stylish.js';
 
+import jsonFormatter from './json.js';
+
 const formaterName = (option, treeAst) => {
-  if (option.format === 'plain') {
-    return plain(treeAst, constructorName(treeAst));
+  switch (option.format) {
+    case 'plain':
+      return plain(treeAst, constructorName(treeAst));
+    case 'json':
+      return jsonFormatter(treeAst);
+    default:
+      return stylish(treeAst);
   }
-  return stylish(treeAst);
 };
 export default formaterName;
