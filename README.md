@@ -15,3 +15,11 @@
 Сравнение вложенных файлов (JSON)
 
 [![asciicast](https://asciinema.org/a/iZ12tDvTp3Q0EbmGoW9fAZ0yH.svg)](https://asciinema.org/a/iZ12tDvTp3Q0EbmGoW9fAZ0yH)
+
+Вывод в плоском формате (plain)
+
+[![asciicast](https://asciinema.org/a/ooQ5B5P1jYT7DP32BkXt0af9q.svg)](https://asciinema.org/a/ooQ5B5P1jYT7DP32BkXt0af9q)
+
+Вывод в формате json
+
+[![asciicast](https://asciinema.org/a/tOzsADEuR81u4iaCW06pQgVrl.svg)](https://asciinema.org/a/tOzsADEuR81u4iaCW06pQgVrl)
