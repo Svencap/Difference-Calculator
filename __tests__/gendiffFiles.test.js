@@ -7,7 +7,8 @@ import { getPath, parser } from '../src/getPath';
 
 import stylish from '../formatters/stylish';
 
-import diff from '../gendiffFiles';
+import createdTree from '../treeAst';
+
 import { constructorName, plain } from '../formatters/plain';
 import jsonFormatter from '../formatters/json';
 
@@ -59,7 +60,7 @@ describe('nesting check', () => {
     }
 }`;
   test('json', () => {
-    tree = diff(parser(getPath('file3.json')), parser(getPath('file4.json')));
+    tree = createdTree(parser(getPath('file3.json')), parser(getPath('file4.json')));
     expect(stylish(tree)).toBe(expectDiff);
   });
 });
@@ -77,7 +78,7 @@ Property 'group1.nest' was updated. From [complex value] to 'str'
 Property 'group2' was removed
 Property 'group3' was added with value: [complex value]`;
   test('plain', () => {
-    tree = diff(parser(getPath('file3.json')), parser(getPath('file4.json')));
+    tree = createdTree(parser(getPath('file3.json')), parser(getPath('file4.json')));
     expect(plain(tree, constructorName(tree))).toBe(expectPlainFormat);
   });
 });
@@ -85,7 +86,7 @@ Property 'group3' was added with value: [complex value]`;
 describe('jsonFormatter', () => {
   const expectjsonFormatter = '[{"name":"follow","value":false,"status":"deleted"},{"name":"host","value":"hexlet.io","status":"unchanged"},{"name":"proxy","value":"123.234.53.22","status":"deleted"},{"name":"timeout","oldValue":50,"newValue":20,"status":"changed"},{"name":"verbose","value":true,"status":"added"}]';
   test('test file1.yml and file2.yml', () => {
-    const treeAst = diff(parser(getPath('file1.yml')), parser(getPath('file2.yml')));
+    const treeAst = createdTree(parser(getPath('file1.yml')), parser(getPath('file2.yml')));
     expect(jsonFormatter(treeAst)).toBe(expectjsonFormatter);
   });
 });
