@@ -5,7 +5,7 @@ import { Command } from 'commander';
 
 import { parser } from '../src/getPath.js';
 
-import diff from '../gendiffFiles.js';
+import createdTree from '../treeAst.js';
 
 import formaterName from '../formatters/index.js';
 
@@ -17,7 +17,7 @@ program
   .version('0.0.1', '-V, --version', 'output the version number')
   .option('-f, --format [type]', 'output format', 'stylish')
   .action((filepath1, filepath2, options) => {
-    const treeAst = diff(parser(filepath1), parser(filepath2));
+    const treeAst = createdTree(parser(filepath1), parser(filepath2));
     console.log(formaterName(options, treeAst));
   })
   .parse();
