@@ -2,14 +2,14 @@
   "name": "gendiff",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/gendiff.js",
   "type": "module",
   "jest": {
     "testEnvironment": "node",
     "transform": {}
   },
   "bin": {
-    "gendiff": "bin/gendiff.js"
+    "gendiff": "bin/index.js"
   },
   "scripts": {
     "test": "NODE_OPTIONS=--experimental-vm-modules npx jest"

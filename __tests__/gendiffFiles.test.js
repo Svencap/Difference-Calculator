@@ -7,7 +7,7 @@ import { getPath, parser } from '../src/getPath';
 
 import stylish from '../formatters/stylish';
 
-import createdTree from '../treeAst';
+import createdTree from '../src/treeAst';
 
 import { constructorName, plain } from '../formatters/plain';
 import jsonFormatter from '../formatters/json';

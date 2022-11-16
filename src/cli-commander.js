@@ -1,10 +1,9 @@
 /* eslint-disable import/extensions */
-
-import createdTree from '../treeAst.js';
+import createdTree from './treeAst.js';
 
 import formaterName from '../formatters/index.js';
 
-import { getPath, parser } from '../src/getPath.js';
+import { getPath, parser } from './getPath.js';
 
 const genDiff = (filepath1, filepath2, format) => {
   const readFileSync1 = parser(getPath(filepath1));
