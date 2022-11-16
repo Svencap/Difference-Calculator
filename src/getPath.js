@@ -15,7 +15,7 @@ const parser = (file) => {
   const extname = path.extname(file);
   switch (extname) {
     case '.json':
-      return JSON.parse(fs.readFileSync(getPath(file)));
+      return JSON.parse(fs.readFileSync(getPath(file), 'utf-8'));
     case '.yml':
       return yaml.load(fs.readFileSync(getPath(file), 'utf-8'));
     default:
