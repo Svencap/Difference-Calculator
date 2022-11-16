@@ -3,11 +3,7 @@
 
 import { Command } from 'commander';
 
-import { parser } from '../src/getPath.js';
-
-import createdTree from '../treeAst.js';
-
-import formaterName from '../formatters/index.js';
+import genDiff from '../index.js';
 
 const program = new Command();
 
@@ -16,8 +12,8 @@ program
   .description('Compares two configuration files and shows a difference.')
   .version('0.0.1', '-V, --version', 'output the version number')
   .option('-f, --format [type]', 'output format', 'stylish')
-  .action((filepath1, filepath2, options) => {
-    const treeAst = createdTree(parser(filepath1), parser(filepath2));
-    console.log(formaterName(options, treeAst));
+  .action((filepath1, filepath2) => {
+    const param = program.opts().format;
+    console.log(genDiff(filepath1, filepath2, param));
   })
-  .parse();
+  .parse(process.argv);

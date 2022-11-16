@@ -6,7 +6,7 @@ import stylish from './stylish.js';
 import jsonFormatter from './json.js';
 
 const formaterName = (option, treeAst) => {
-  switch (option.format) {
+  switch (option) {
     case 'plain':
       return plain(treeAst, constructorName(treeAst));
     case 'json':
